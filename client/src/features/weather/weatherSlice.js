@@ -16,7 +16,7 @@ export const getWeather = createAsyncThunk(
       console.log(city)
     try {
       const api = "http://api.weatherapi.com/v1/";
-      const token = "e1b9d9130ddd488db6e82018222103";
+      const token = process.env.REACT_APP_WEATHER_API_KEY;
       let option = `current.json?key=${token}&q=${city}&aqi=no`;
       const response =await axios.get(api + option);
       console.log(response.data)
