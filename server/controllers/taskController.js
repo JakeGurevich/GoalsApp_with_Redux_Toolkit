@@ -49,12 +49,12 @@ const getTasks = asyncHandler(async (req, res) => {
   const pageNumber = req.query.page || 1;
   const limit = req.query.limit || 2;
   let tasks = await Task.find().sort({ name: 1 }).lean();
-  tasks = tasks.map((task) => _.pick(task, ["name", "description"]));
+  // tasks = tasks.map((task) => _.pick(task, ["name", "description"]));
   // .skip((pageNumber-1)*limit)
   if (tasks) {
-    console.log(`page: ${pageNumber}
-            limit : ${limit}`);
-    console.log(tasks.length);
+    // console.log(`page: ${pageNumber}
+    //         limit : ${limit}`);
+    // console.log(tasks.length);
     res.send(tasks);
   }
 });
