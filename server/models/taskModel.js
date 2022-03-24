@@ -11,6 +11,11 @@ const taskSchema = mongoose.Schema(
       type: String,
      
     },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "User",
+    },
   },
   {
     timestamps: true,

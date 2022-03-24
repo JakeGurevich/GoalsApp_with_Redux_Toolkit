@@ -121,6 +121,7 @@ function Register() {
             <button type='submit' className='btn btn-block'>
               Submit
             </button>
+            <button className='btn btn-block' onClick ={()=>navigate('/login')}>Login</button>
           </div>
         </form>
       </section>

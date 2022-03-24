@@ -11,6 +11,7 @@ const createTask = asyncHandler(async (req, res) => {
     return res.status(400).send(result.error.details[0].message);
   }
   const task = {
+    user:req.user._id,
     name: req.body.name,
     description: req.body.description,
   };
@@ -37,10 +38,10 @@ const updateUser = asyncHandler(async (req, res) => {
   }
 });
 
-const deleteUser = asyncHandler(async (req, res) => {
-  const user = await User.findByIdAndDelete(req.params.id);
-  if (user) {
-    res.send(user);
+const deleteTask = asyncHandler(async (req, res) => {
+  const task = await Task.findByIdAndDelete(req.params.id);
+  if (task) {
+    res.send(task);
   }
 });
 
@@ -48,10 +49,11 @@ const getTasks = asyncHandler(async (req, res) => {
   console.log(req.params);
   const pageNumber = req.query.page || 1;
   const limit = req.query.limit || 2;
-  let tasks = await Task.find().sort({ name: 1 }).lean();
+  let tasks = await Task.find({"user":req.user._id}).sort({ name: 1 }).lean();
   // tasks = tasks.map((task) => _.pick(task, ["name", "description"]));
   // .skip((pageNumber-1)*limit)
   if (tasks) {
+    console.log(tasks);
     // console.log(`page: ${pageNumber}
     //         limit : ${limit}`);
     // console.log(tasks.length);
@@ -88,4 +90,4 @@ const getUserProfile = asyncHandler(async (req, res) => {
   });
 });
 
-module.exports = { createTask, getTasks };
+module.exports = { createTask, getTasks,deleteTask };

@@ -95,6 +95,11 @@ const getUserProfile = asyncHandler(async (req, res) => {
     isAdmin: req.user.isAdmin,
   });
 });
+const getApi =  (req, res) => {
+  res.send({
+   key:process.env.WEATHER_API_KEY
+  });
+};
 
 module.exports = {
   authUser,
@@ -103,4 +108,5 @@ module.exports = {
   getUsers,
   updateUser,
   deleteUser,
+  getApi
 };

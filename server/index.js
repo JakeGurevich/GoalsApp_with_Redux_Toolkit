@@ -8,10 +8,10 @@ const logger = require("./middlewares/loggerMiddleware");
 const { notFound, errorHandler } = require("./middlewares/error");
 const userRouter = require("./routes/usersRoute");
 const taskRouter = require("./routes/taskRoute");
-dotenv.config();
+
 
 const Colors = require("colors");
-
+dotenv.config();
 const publicDirectory = path.join(__dirname, "../client/build");
 
 const app = express();
@@ -25,9 +25,14 @@ app.use(logger);
 
 app.use("/api/users", userRouter);
 app.use("/api/tasks", taskRouter);
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
+if (process.env.NODE_ENV==='production'){
+
+
+    app.get("*", (req, res) => {
+      res.sendFile(path.join(__dirname, "build", "index.html"));
+    });
+        
+}
 app.use(notFound);
 app.use(errorHandler);
 

@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Typography, IconButton, Box,Button } from "@mui/materi
 import { ShoppingBasket, Login, Logout } from "@mui/icons-material";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import {ListItemLink} from './Link';
 import { logout, reset } from "../features/auth/authSlice";
 import { open,close } from '../features/cart/cartSlice'
 
@@ -20,7 +21,7 @@ const HeaderMUI = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <Typography sx={{ flexGrow: 1 }}>Goals App</Typography>
+          <Button  sx={{ flexGrow: 1,color: 'white', display: 'block',textAlign: 'left' }} onClick ={()=>{navigate('/')}}>Goals App </Button>
           {user ? (
             <>
               <Button onClick ={()=>{navigate('/weather')}}  sx={{ color: 'white', display: 'block' }}>Weather</Button>

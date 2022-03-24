@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import Api from '../goals/goalService'
 import axios from 'axios'
 
 const initialState = {
@@ -13,11 +14,15 @@ const initialState = {
 export const getWeather = createAsyncThunk(
   "forecast/get",
   async (city, thunkAPI) => {
-      console.log(city)
+    
     try {
       const api = "http://api.weatherapi.com/v1/";
-      const token = process.env.REACT_APP_WEATHER_API_KEY;
-      let option = `current.json?key=${token}&q=${city}&aqi=no`;
+      // const tokenApiEnv = process.env.REACT_APP_WEATHER_API_KEY;
+      
+      const token = thunkAPI.getState().auth.user.token 
+      const tokenApi =await Api.getApi() ;
+      
+      let option = `current.json?key=${tokenApi.key}&q=${city}&aqi=no`;
       const response =await axios.get(api + option);
       console.log(response.data)
       return response.data;
