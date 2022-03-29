@@ -279,3 +279,6 @@
 1:22:2 POST /api/users/login ( Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36 )
 1:22:2 GET /api/tasks/ ( Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36 )
 1:22:29 POST /api/tasks/create ( Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36 )
+22:4:40 GET / ( Avast Antivirus )
+22:12:7 GET / ( Avast Antivirus )
+9:47:26 GET / ( Avast Antivirus )

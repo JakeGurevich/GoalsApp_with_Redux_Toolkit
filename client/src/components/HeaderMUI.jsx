@@ -22,6 +22,7 @@ const HeaderMUI = () => {
       <AppBar position="static">
         <Toolbar>
           <Button  sx={{ flexGrow: 1,color: 'white', display: 'block',textAlign: 'left' }} onClick ={()=>{navigate('/')}}>Goals App </Button>
+          <Button  sx={{ flexGrow: 1,color: 'white', display: 'block',textAlign: 'left' }} onClick ={()=>{navigate('/students')}}>Students </Button>
           {user ? (
             <>
               <Button onClick ={()=>{navigate('/weather')}}  sx={{ color: 'white', display: 'block' }}>Weather</Button>
