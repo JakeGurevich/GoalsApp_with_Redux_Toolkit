@@ -9,6 +9,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   height: 100vh;
+  background-color: #FFEBCD;
 }
 
 a {
@@ -212,4 +213,12 @@ h3 {
   .heading p {
     font-size: 1.5rem;
   }
+}
+.tooltip {
+  border-radius: 0.25rem;
+  background: #26313c;
+  color: #fff;
+  padding: 1rem;
+  box-shadow: 15px 30px 40px 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }

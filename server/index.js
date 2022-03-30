@@ -8,6 +8,7 @@ const logger = require("./middlewares/loggerMiddleware");
 const { notFound, errorHandler } = require("./middlewares/error");
 const userRouter = require("./routes/usersRoute");
 const taskRouter = require("./routes/taskRoute");
+const dataRouter = require("./routes/dataRoute");
 
 
 const Colors = require("colors");
@@ -23,6 +24,7 @@ app.use(express.static(publicDirectory));
 app.use(cors());
 app.use(logger);
 
+app.use("/api/data", dataRouter);
 app.use("/api/users", userRouter);
 app.use("/api/tasks", taskRouter);
 if (process.env.NODE_ENV==='production'){

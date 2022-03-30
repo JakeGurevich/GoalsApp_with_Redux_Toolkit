@@ -14,22 +14,20 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		
-		"concurrently": "^6.0.2",
 		"bcryptjs": "^2.4.3",
 		"colors": "^1.4.0",
+		"concurrently": "^6.0.2",
 		"config": "^3.3.7",
 		"cors": "^2.8.5",
+		"date-fns": "^2.28.0",
 		"dotenv": "^16.0.0",
 		"express": "^4.17.2",
 		"express-async-handler": "^1.2.0",
 		"jake-lib": "^1.0.0",
 		"joi": "^17.6.0",
 		"jsonwebtoken": "^8.5.1",
-		
 		"lodash": "^4.17.21",
 		"mongoose": "^6.2.4",
-		
 		"underscore": "^1.13.2",
 		"validator": "^13.6.0"
 	}

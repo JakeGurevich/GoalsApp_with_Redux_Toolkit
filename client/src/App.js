@@ -9,6 +9,7 @@ import Register from "./pages/Register";
 import Shop from "./pages/Shop";
 import Weather from "./pages/Weather";
 import Student from "./pages/Students";
+import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/shop" element={<Shop />} />
             <Route path="/weather" element={<Weather />} />
             <Route path="/students" element={<Student />} />
+            <Route path="/admin/data" element={<AdminDashboard />} />
           </Routes>
         </div>
       </Router>
